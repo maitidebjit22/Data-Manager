@@ -1,0 +1,63 @@
+<div class="wrapper login">
+  <div class="container">
+    <div class="col-left">
+      <div class="login-text">
+        <h2>Login Page!</h2>
+        <p>Go to Dashboard?</p>
+        <a routerLink="/admin">Admin</a>
+      </div>
+    </div>
+
+    <div class="col-right">
+      <div class="login-form">
+        <h2>Login</h2>
+         <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+          <p>
+            <label>Email
+            </label>
+           <input
+      type="text"
+      pInputText
+      formControlName="email"
+      class="w-full"
+      name="email"
+      placeholder="Type your email"
+    />
+    <small
+      *ngIf="email.invalid && (email.dirty || email.touched)"
+      class="block p-error"
+    >
+      <div *ngIf="email.errors?.['required']">Email is required.</div>
+      <div *ngIf="email.errors?.['email']">Email should be valid</div>
+    </small>
+          </p>
+          <p>
+          <label>Password</label>
+          <input
+      type="password"
+      pInputText
+      formControlName="password"
+      class="w-full"
+      name="password"
+      placeholder="Type your password"
+    />
+    <small
+      *ngIf="password.invalid && (password.dirty || password.touched)"
+      class="block p-error"
+    >
+      <div *ngIf="password.errors?.['required']">Password is required.</div>
+    </small>
+          </p>
+          <p>
+            <input type="submit" [disabled]="loginForm.invalid" value="LOGIN" id="btn1">
+          </p>
+          <p>
+          
+          </p>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+    

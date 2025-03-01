@@ -1,0 +1,156 @@
+input[type="file"] {
+  margin: auto;
+  padding: 1.5em;
+
+
+  transition: border-color .25s ease-in-out;
+  &::file-selector-button{
+  padding: 1em 1.5em;
+  border-width: 0;
+  border-radius: 2em;
+  background-color: hsl(210 70% 30%);
+  color: hsl(210 40% 90%);
+  transition: all .25s ease-in-out;
+  cursor: pointer;
+  margin-right: 1em;
+  }
+  &:hover {
+  border-color: #888;
+    
+  &::file-selector-button{
+    
+    background-color: hsl(210 70% 40%);
+    }
+  }
+}
+.form-container {
+  background-color: aliceblue; /* Path to your image */
+   background-size: cover;   /* Ensures the background covers the entire form container */
+   background-position: center;  /* Centers the background image */
+   padding: 55px;   /* Adjusts padding for spacing */
+ }
+
+
+ /* lets make it responsive */
+ @media screen and (max-width:600px)
+ {
+     .form-container
+ {
+     height: 2000px;
+     background-position:center;
+     background-size: cover;
+ }
+ }
+/* lets make it responsive */
+@media (max-width: 440px){
+   .form-wrapper{
+       top: 50%;
+       height: 700px;
+       background-position:center bottom;
+       background-size: cover;
+   }
+   
+ }
+ * {font-family: 'Open Sans', sans-serif;}
+
+ table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+h1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+a{
+  text-decoration: none;
+}
+ .four {
+  background: rgb(96, 181, 250);
+  color: #272829;
+  border-radius: 50px;
+  width: 100px;
+  padding: 10px;
+  font-size: 15x;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  box-shadow: 10px 10px;
+}

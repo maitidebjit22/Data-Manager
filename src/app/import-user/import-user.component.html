@@ -1,0 +1,16 @@
+<form [formGroup]="form">
+
+    <input type="file" class="file-input" formControlName="file" (change)="handleInputChange($event)" #fileUpload>
+    <div class="file-upload">
+      {{fileName || "No file uploaded yet."}}
+  
+        <button mat-mini-fab color="primary" class="upload-btn"
+          (click)="fileUpload.click()">
+            <mat-icon>attach_file</mat-icon>
+        </button>
+    </div>
+    <mat-error style="font-size: 90%;" *ngIf="error_msg">{{file_required_label}}</mat-error>
+    <br>
+    <button type="submit" mat-raised-button (click)="submit()"class="demo-button">Upload</button>
+  
+  </form>

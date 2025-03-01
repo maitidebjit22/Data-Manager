@@ -1,0 +1,547 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display:flex;
+    height: 100vh;
+    
+    background-color: #f4f4f4;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #83bff0;
+    color: #fff;
+    width: 220px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+}
+
+.sidebar-item a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar-item img {
+    margin-right: 10px;
+}
+
+.sidebar-item:hover {
+    background-color: #3b4751;
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.main-content a {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.box-icon {
+    margin-bottom: 15px;
+}
+
+.box-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.box-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.box-content p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+      
+    }
+    .table-container {
+        overflow-x: auto;
+      }
+      .table-container {
+        margin-bottom: 20px;
+      }
+    .sidebar {
+        width: 100%;
+        height: auto;
+       
+        justify-content:baseline;
+        padding: 10px 0;
+        
+    }
+
+    .sidebar-item {
+        padding: 10px;
+    }
+    
+    .main-content {
+        width: auto;
+        padding: 20px 10px;
+        overflow: hidden;
+        
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: left;
+    }
+
+    .box {
+        width: 90%;
+        
+    }
+
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 1.3em;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display:flex;
+        margin-bottom: .625em;
+        font-size: 12px;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 10px;
+        text-align: right;
+    }
+   
+    table td::before {
+        /*
+        * aria-label has no advantage, it won't be read inside a table
+        content: attr(aria-label);
+        */
+     
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+ .skills {
+    animation-name: skills;
+}
+
+
+
+
+section {
+  
+
+  article.skills {
+    width: 1000px;
+    height: auto;
+
+    p {
+      z-index: 2;
+      color: #fff;
+      padding: 10px;
+      position: relative;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    div {
+      
+
+      span:nth-child(1) {
+        z-index: -2;
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        margin: auto;
+        background:#fff;
+        height: 100%;
+        width: 100%;
+      }
+
+      span:nth-child(2) {
+        z-index: -1;
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        background: #5E95E8;
+        height: 100%;
+      }
+    }
+
+    div:nth-child(1) {
+      
+
+      span:nth-child(2) {
+        width:90%;
+        animation-delay: 0;
+      }
+    }
+
+    div:nth-child(2) {
+      
+
+      span:nth-child(2) {
+        width:90%;
+        animation-delay: 0.05s;
+      }
+    }
+
+    div:nth-child(3) {
+      
+
+      span:nth-child(2) {
+        width:80%;
+        animation-delay: 0.1s;
+      }
+    }
+
+    div:nth-child(4) {
+      
+
+      span:nth-child(2) {
+        width: 70%;
+        animation-delay: 0.15s;
+      }
+    }
+
+    div:nth-child(5) {
+      
+
+      span:nth-child(2) {
+        width:75%;
+        animation-delay: 0.2s;
+      }
+    }
+
+    div:nth-child(6) {
+      
+
+      span:nth-child(2) {
+        width:60%;
+        animation-delay: 0.25s;
+      }
+    }
+
+    div:nth-child(7) {
+    
+
+      span:nth-child(2) {
+        width:80%;
+        animation-delay: 0.3s;
+      }
+    }
+
+    div:nth-child(8) {
+    
+
+      span:nth-child(2) {
+        width:75%;;
+        animation-delay: 0.35s;
+      }
+    }
+  }
+
+  &:before {
+   
+   position: absolute;
+  }
+
+  &:after {
+ position: absolute;
+  
+  }
+}
+
+.skills {
+    animation: skills 1.25s  cubic-bezier(.17,.67,0,1);
+}
+
+@keyframes skills {
+    0% {
+        left: -500px;
+        opacity: 0;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+
+table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+table th,
+table td {
+    padding: .625em;
+    text-align: center;
+}
+
+table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+
+
+.skills {
+    animation-name: skills;
+}
+
+
+
+
+section {
+  
+
+  article.skills {
+    width: 1000px;
+    height: auto;
+
+    p {
+      z-index: 2;
+      color: #fff;
+      padding: 10px;
+      position: relative;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    div {
+      
+
+      span:nth-child(1) {
+        z-index: -2;
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        margin: auto;
+        background:#fff;
+        height: 100%;
+        width: 100%;
+      }
+
+      span:nth-child(2) {
+        z-index: -1;
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        background: #5E95E8;
+        height: 100%;
+      }
+    }
+
+    div:nth-child(1) {
+      
+
+      span:nth-child(2) {
+        width:90%;
+        animation-delay: 0;
+      }
+    }
+
+    div:nth-child(2) {
+      
+
+      span:nth-child(2) {
+        width:90%;
+        animation-delay: 0.05s;
+      }
+    }
+
+    div:nth-child(3) {
+      
+
+      span:nth-child(2) {
+        width:80%;
+        animation-delay: 0.1s;
+      }
+    }
+
+    div:nth-child(4) {
+      
+
+      span:nth-child(2) {
+        width: 70%;
+        animation-delay: 0.15s;
+      }
+    }
+
+    div:nth-child(5) {
+      
+
+      span:nth-child(2) {
+        width:75%;
+        animation-delay: 0.2s;
+      }
+    }
+
+    div:nth-child(6) {
+      
+
+      span:nth-child(2) {
+        width:60%;
+        animation-delay: 0.25s;
+      }
+    }
+
+    div:nth-child(7) {
+    
+
+      span:nth-child(2) {
+        width:80%;
+        animation-delay: 0.3s;
+      }
+    }
+
+    div:nth-child(8) {
+    
+
+      span:nth-child(2) {
+        width:75%;;
+        animation-delay: 0.35s;
+      }
+    }
+  }
+
+  &:before {
+   
+   position: absolute;
+  }
+
+  &:after {
+ 
+  position: absolute;
+  }
+}
+
+.skills {
+    animation: skills 1.25s  cubic-bezier(.17,.67,0,1);
+}
+
+@keyframes skills {
+    0% {
+        left: -500px;
+        opacity: 0;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+.text{
+    position: relative;
+    font-size: 1.5vw;
+    color:rgb(13, 13, 14);
+    -webkit-text-stroke: 0vw #383d52;
+    text-transform: uppercase;
+}
+.text::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color:rgb(254, 1, 35);
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid rgb(254, 1, 35);
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+
+}
+@keyframes animate{
+    0%,10%,100%{
+        width: 0;
+    }
+    70%,90%{
+        width: 100%;
+    }
+}

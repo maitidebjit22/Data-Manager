@@ -1,0 +1,86 @@
+<div class="wrapper login">
+  <div class="container">
+    <div class="col-left">
+      <div class="login-text">
+        <h2>Register!</h2>
+        <p>Already a member?</p>
+        <a routerLink="/login">Login</a>
+      </div>
+    </div>
+
+    <div class="col-right">
+      <div class="login-form">
+        <h2>Login</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="submitDetails()">
+          <p>
+            <label>Name
+            </label>
+            <input type="text" pInputText formControlName="name" class="w-full" name="name"
+              placeholder="Type your name" />
+            <small *ngIf="name.invalid && (name.dirty || name.touched)" class="block p-error">
+              <div *ngIf="name.errors?.['required']">Name is required.</div>
+              <div *ngIf="name.errors?.['pattern']">Enter a valid Name</div>
+            </small>
+          </p>
+          <p>
+            <label>Email
+            </label>
+            <input type="text" pInputText formControlName="email" class="w-full" name="email"
+              placeholder="Type your email" />
+            <small *ngIf="email.invalid && (email.dirty || email.touched)" class="block p-error">
+              <div *ngIf="email.errors?.['required']">Email is required.</div>
+              <div *ngIf="email.errors?.['email']">Email should be valid</div>
+            </small>
+          </p>
+          <p>
+            <label>Location
+            </label>
+            <input type="text" pInputText formControlName="location" class="w-full" name="location"
+              placeholder="Type your location" />
+           
+          </p>
+          <p>
+            <label>Mobile
+            </label>
+            <input type="text" pInputText formControlName="mobile" class="w-full" name="mobile"
+              placeholder="Type your mobile" />
+            
+          </p>
+          <p>
+            <label>Password</label>
+            <input type="password" pInputText formControlName="password" class="w-full" name="password"
+              placeholder="Type your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+          <b class="input-hint">*at least 8 characters</b>
+          <small *ngIf="password.invalid && (password.dirty || password.touched)" class="block p-error">
+            <div *ngIf="password.errors?.['required']">Password is required.</div>
+          </small>
+          </p>
+          <p>
+            <label>Confirm Password</label>
+            <input type="password" pInputText formControlName="cpassword" class="w-full" name="cpassword"
+              placeholder="Confirm Password" />
+            <small *ngIf="
+          cpassword.invalid &&
+          (cpassword.dirty || cpassword.touched)
+        " class="block p-error">
+              <div *ngIf="cpassword.errors?.['required']">
+                Confirm the password
+              </div>
+            </small>
+            <small class="block p-error"
+              *ngIf="registerForm.errors?.['passwordMismatch'] && cpassword.valid && password.valid">
+              Password should match
+            </small>
+          </p>
+          <p>
+            <input type="submit" [disabled]="registerForm.invalid" value="Register" id="btn1">
+          </p>
+          <p>
+
+          </p>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

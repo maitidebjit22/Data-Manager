@@ -1,0 +1,66 @@
+.form-container {
+    background-color: aliceblue; /* Path to your image */
+     background-size: cover;   /* Ensures the background covers the entire form container */
+     background-position: center;  /* Centers the background image */
+     padding: 55px;   /* Adjusts padding for spacing */
+   }
+ 
+ h1 {
+   display: flex;
+   justify-content: space-between;
+ }
+   /* lets make it responsive */
+   @media screen and (max-width:600px)
+   {
+       .form-container
+   {
+       height: 2000px;
+       background-position:center;
+       background-size: cover;
+   }
+   }
+ /* lets make it responsive */
+ @media (max-width: 440px){
+     .form-wrapper{
+         top: 50%;
+         height: 700px;
+         background-position:center bottom;
+         background-size: cover;
+     }
+     
+   }
+ 
+   .table-container {
+     overflow-x: auto;
+   }
+   
+   .mat-header-cell, .mat-cell {
+     padding: 16px;
+   }
+   
+   .mat-paginator {
+     margin-top: 20px;
+   }
+   
+   /* Responsive styles */
+   @media (max-width: 600px) {
+     .mat-header-cell,
+     .mat-cell {
+       font-size: 12px;
+       padding: 8px;
+     }
+   
+     .table-container {
+       margin-bottom: 20px;
+     }
+   }
+   th
+   {
+  font-weight: bold;
+   }
+ td
+ {
+ font-size: 11px;
+ }
+ 
+  

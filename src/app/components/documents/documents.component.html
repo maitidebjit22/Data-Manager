@@ -1,0 +1,51 @@
+
+<div class="form-container">
+  <div class="container mt-3">
+    <div class="form-wrapper">
+      <div class="Upload-wrapper" style="text-align: right;">
+    <input type="file" (change)="select($event)" /> 
+    <button mat-raised-button (click)="onUpload()" class="demo-button">
+      Upload
+    </button>
+  </div>
+    <div class="container">
+    
+       
+        <table class="rwd-table">
+          <tbody>
+            <tr>
+              <th>File Name</th>
+              <th>Link</th>
+            
+              <th>Actions</th>
+            </tr>
+           
+            <tr *ngFor="let file of files| paginate: { itemsPerPage: 5, currentPage: p}">
+              <td>{{ file.originalfile }}</td>
+              <td>{{ file.filePath }}</td>
+             
+              <td>
+             
+                <button class="four" (click)="downloadFile(file.filename)">Download</button>
+              </td>
+            </tr>
+              
+          
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event" style="text-align: right;"></pagination-controls>
+
+      </div>
+    <h1>
+      <div class="dashboard-container" style="text-align: right;">
+      
+        <button mat-raised-button (click)="onLogout()">Logout</button>
+      </div>
+      <div class="dashboard-contain" style="text-align:left;">
+      
+        <button mat-raised-button><a href="/home">Go to Admin Page</a></button>
+      </div>
+    </h1>
+  </div>
+</div>
+</div>

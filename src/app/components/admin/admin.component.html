@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="col-left">
+      <div class="login-text">
+        <h2>Welcome Admin</h2>
+        <p>Go to Login Page?</p>
+        <a routerLink="/login">Login</a>
+      </div>
+    </div>
+    <div class="col-right">
+      <div class="login-form">
+        <h2>Admin</h2>
+
+        <form (ngSubmit)="onLogin()">
+          <p>
+            <label>Username</label>
+            <input type="text" id="username" [(ngModel)]="username" name="username" required>
+          </p>
+          <p>
+            <label>Password</label>
+            <input type="password" id="password" [(ngModel)]="password" name="password" required>
+          </p>
+          <p>
+            <input type="submit" value="Sign In" />
+          </p>
+          <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

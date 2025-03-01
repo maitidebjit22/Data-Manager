@@ -1,0 +1,1125 @@
+
+<div class="form-container">
+  <div class="container mt-3">
+    <div class="form-wrapper">
+      <h1>
+        <input type="text" style="width: 200px; padding: 10px; margin-left: 0px; border-radius: 5px;"
+          [(ngModel)]="userFilter.Serial" placeholder="Search">
+       
+      </h1>
+
+      <br>
+      <br>
+      <br>
+      <div class="table-container">
+        <table mat-table [dataSource]="dataSource |filterBy:userFilter| paginate: { itemsPerPage: 5, currentPage: p } "
+          class="mat-elevation-z8">
+          <!-- Name Column -->
+          <ng-container matColumnDef="Serial">
+            <th mat-header-cell *matHeaderCellDef> Serial</th>
+            <td mat-cell *matCellDef="let element"> {{element.Serial}} </td>
+          </ng-container>
+          <!-- Name Column -->
+          <ng-container matColumnDef="Hugo_Symbol">
+            <th mat-header-cell *matHeaderCellDef> Hugo_Symbol</th>
+            <td mat-cell *matCellDef="let element"> {{element.Hugo_Symbol}} </td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="Entrez_Gene_Id">
+            <th mat-header-cell *matHeaderCellDef> Entrez_Gene_Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.Entrez_Gene_Id}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Center">
+            <th mat-header-cell *matHeaderCellDef> Center </th>
+            <td mat-cell *matCellDef="let element"> {{element.Center}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="NCBI_Build">
+            <th mat-header-cell *matHeaderCellDef> NCBI_Build </th>
+            <td mat-cell *matCellDef="let element"> {{element.NCBI_Build}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Chromosome">
+            <th mat-header-cell *matHeaderCellDef> Chromosome </th>
+            <td mat-cell *matCellDef="let element"> {{element.Chromosome}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Start_Position">
+            <th mat-header-cell *matHeaderCellDef> Start_Position</th>
+            <td mat-cell *matCellDef="let element"> {{element.Start_Position}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="End_Position">
+            <th mat-header-cell *matHeaderCellDef> End_Position </th>
+            <td mat-cell *matCellDef="let element"> {{element.End_Position}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Strand">
+            <th mat-header-cell *matHeaderCellDef> Strand </th>
+            <td mat-cell *matCellDef="let element"> {{element.Strand}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Variant_Classification">
+            <th mat-header-cell *matHeaderCellDef> Variant_Classification </th>
+            <td mat-cell *matCellDef="let element"> {{element.Variant_Classification}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Variant_Type">
+            <th mat-header-cell *matHeaderCellDef> Variant_Type </th>
+            <td mat-cell *matCellDef="let element"> {{element.Variant_Type}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Reference_Allele">
+            <th mat-header-cell *matHeaderCellDef> Reference_Allele </th>
+            <td mat-cell *matCellDef="let element"> {{element.Reference_Allele}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Tumor_Seq_Allele1">
+            <th mat-header-cell *matHeaderCellDef> Tumor_Seq_Allele1 </th>
+            <td mat-cell *matCellDef="let element"> {{element.Tumor_Seq_Allele1}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Tumor_Seq_Allele2">
+            <th mat-header-cell *matHeaderCellDef> Tumor_Seq_Allele2 </th>
+            <td mat-cell *matCellDef="let element"> {{element.Tumor_Seq_Allele2}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_RS">
+            <th mat-header-cell *matHeaderCellDef> dbSNP_RS</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_RS}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_Val_Status">
+            <th mat-header-cell *matHeaderCellDef> dbSNP_Val_Status</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_Val_Status}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Tumor_Sample_Barcode">
+            <th mat-header-cell *matHeaderCellDef> Tumor_Sample_Barcode</th>
+            <td mat-cell *matCellDef="let element"> {{element.Tumor_Sample_Barcode}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Matched_Norm_Sample_Barcode">
+            <th mat-header-cell *matHeaderCellDef> Matched_Norm_Sample_Barcode</th>
+            <td mat-cell *matCellDef="let element"> {{element.Matched_Norm_Sample_Barcode}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Match_Norm_Seq_Allele1">
+            <th mat-header-cell *matHeaderCellDef> Match_Norm_Seq_Allele1</th>
+            <td mat-cell *matCellDef="let element"> {{element.Match_Norm_Seq_Allele1}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Match_Norm_Seq_Allele2">
+            <th mat-header-cell *matHeaderCellDef> Match_Norm_Seq_Allele2</th>
+            <td mat-cell *matCellDef="let element"> {{element.Match_Norm_Seq_Allele2}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Tumor_Validation_Allele1">
+            <th mat-header-cell *matHeaderCellDef> Tumor_Validation_Allele1</th>
+            <td mat-cell *matCellDef="let element"> {{element.Tumor_Validation_Allele1}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Tumor_Validation_Allele2">
+            <th mat-header-cell *matHeaderCellDef> Tumor_Validation_Allele2</th>
+            <td mat-cell *matCellDef="let element"> {{element.Tumor_Validation_Allele2}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Match_Norm_Validation_Allele1">
+            <th mat-header-cell *matHeaderCellDef> Match_Norm_Validation_Allele1</th>
+            <td mat-cell *matCellDef="let element"> {{element.Match_Norm_Validation_Allele1}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Match_Norm_Validation_Allele2">
+            <th mat-header-cell *matHeaderCellDef> Match_Norm_Validation_Allele2</th>
+            <td mat-cell *matCellDef="let element"> {{element.Match_Norm_Validation_Allele2}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Verification_Status">
+            <th mat-header-cell *matHeaderCellDef> Verification_Status</th>
+            <td mat-cell *matCellDef="let element"> {{element.Verification_Status}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Validation_Status">
+            <th mat-header-cell *matHeaderCellDef> Validation_Status</th>
+            <td mat-cell *matCellDef="let element"> {{element.Validation_Status}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Mutation_Status">
+            <th mat-header-cell *matHeaderCellDef> Mutation_Status</th>
+            <td mat-cell *matCellDef="let element"> {{element.Mutation_Status}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Sequencing_Phase">
+            <th mat-header-cell *matHeaderCellDef> Sequencing_Phase</th>
+            <td mat-cell *matCellDef="let element"> {{element.Sequencing_Phase}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Sequence_Source">
+            <th mat-header-cell *matHeaderCellDef> Sequence_Source</th>
+            <td mat-cell *matCellDef="let element"> {{element.Sequence_Source}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Validation_Method">
+            <th mat-header-cell *matHeaderCellDef> Validation_Method</th>
+            <td mat-cell *matCellDef="let element"> {{element.Validation_Method}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Score">
+            <th mat-header-cell *matHeaderCellDef> Score</th>
+            <td mat-cell *matCellDef="let element"> {{element.Score}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="BAM_File">
+            <th mat-header-cell *matHeaderCellDef> BAM_File</th>
+            <td mat-cell *matCellDef="let element"> {{element.BAM_File}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Sequencer">
+            <th mat-header-cell *matHeaderCellDef> Sequencer</th>
+            <td mat-cell *matCellDef="let element"> {{element.Sequencer}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Tumor_Sample_UUID">
+            <th mat-header-cell *matHeaderCellDef> Tumor_Sample_UUID</th>
+            <td mat-cell *matCellDef="let element"> {{element.Tumor_Sample_UUID}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Matched_Norm_Sample_UUID">
+            <th mat-header-cell *matHeaderCellDef>Matched_Norm_Sample_UUID</th>
+            <td mat-cell *matCellDef="let element"> {{element.Matched_Norm_Sample_UUID}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Genome_Change">
+            <th mat-header-cell *matHeaderCellDef>Genome_Change</th>
+            <td mat-cell *matCellDef="let element"> {{element.Genome_Change}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Annotation_Transcript">
+            <th mat-header-cell *matHeaderCellDef>Annotation_Transcript</th>
+            <td mat-cell *matCellDef="let element"> {{element.Annotation_Transcript}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Transcript_Strand">
+            <th mat-header-cell *matHeaderCellDef>Transcript_Strand</th>
+            <td mat-cell *matCellDef="let element"> {{element.Transcript_Strand}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Transcript_Exon">
+            <th mat-header-cell *matHeaderCellDef>Transcript_Exon</th>
+            <td mat-cell *matCellDef="let element"> {{element.Transcript_Exon}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Transcript_Position">
+            <th mat-header-cell *matHeaderCellDef>Transcript_Position</th>
+            <td mat-cell *matCellDef="let element"> {{element.Transcript_Position}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="cDNA_Change">
+            <th mat-header-cell *matHeaderCellDef>cDNA_Change</th>
+            <td mat-cell *matCellDef="let element"> {{element.cDNA_Change}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Codon_Change">
+            <th mat-header-cell *matHeaderCellDef>Codon_Change</th>
+            <td mat-cell *matCellDef="let element"> {{element.Codon_Change}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Protein_Change">
+            <th mat-header-cell *matHeaderCellDef>Protein_Change</th>
+            <td mat-cell *matCellDef="let element"> {{element.Protein_Change}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Other_Transcripts">
+            <th mat-header-cell *matHeaderCellDef>Other_Transcripts</th>
+            <td mat-cell *matCellDef="let element"> {{element.Other_Transcripts}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Refseq_mRNA_Id">
+            <th mat-header-cell *matHeaderCellDef>Refseq_mRNA_Id</th>
+            <td mat-cell *matCellDef="let element"> {{element.Refseq_mRNA_Id}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Refseq_prot_Id">
+            <th mat-header-cell *matHeaderCellDef>Refseq_prot_Id</th>
+            <td mat-cell *matCellDef="let element"> {{element.Refseq_prot_Id}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="SwissProt_acc_Id">
+            <th mat-header-cell *matHeaderCellDef>SwissProt_acc_Id</th>
+            <td mat-cell *matCellDef="let element"> {{element.SwissProt_acc_Id}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="SwissProt_entry_Id">
+            <th mat-header-cell *matHeaderCellDef>SwissProt_entry_Id</th>
+            <td mat-cell *matCellDef="let element"> {{element.SwissProt_entry_Id}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Description">
+            <th mat-header-cell *matHeaderCellDef>Description</th>
+            <td mat-cell *matCellDef="let element"> {{element.Description}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="UniProt_AApos">
+            <th mat-header-cell *matHeaderCellDef>UniProt_AApos</th>
+            <td mat-cell *matCellDef="let element"> {{element.UniProt_AApos}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="UniProt_Region">
+            <th mat-header-cell *matHeaderCellDef>UniProt_Region</th>
+            <td mat-cell *matCellDef="let element"> {{element.UniProt_Region}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="UniProt_Site">
+            <th mat-header-cell *matHeaderCellDef>UniProt_Site</th>
+            <td mat-cell *matCellDef="let element"> {{element.UniProt_Site}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="UniProt_Natural_Variations">
+            <th mat-header-cell *matHeaderCellDef>UniProt_Natural_Variations</th>
+            <td mat-cell *matCellDef="let element"> {{element.UniProt_Natural_Variations}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="UniProt_Experimental_Info">
+            <th mat-header-cell *matHeaderCellDef>UniProt_Experimental_Info</th>
+            <td mat-cell *matCellDef="let element"> {{element.UniProt_Experimental_Info}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="GO_Biological_Process">
+            <th mat-header-cell *matHeaderCellDef>GO_Biological_Process</th>
+            <td mat-cell *matCellDef="let element"> {{element.GO_Biological_Process}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="GO_Cellular_Component">
+            <th mat-header-cell *matHeaderCellDef>GO_Cellular_Component</th>
+            <td mat-cell *matCellDef="let element"> {{element.GO_Cellular_Component}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="GO_Molecular_Function">
+            <th mat-header-cell *matHeaderCellDef>GO_Molecular_Function</th>
+            <td mat-cell *matCellDef="let element"> {{element.GO_Molecular_Function}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="COSMIC_overlapping_mutations">
+            <th mat-header-cell *matHeaderCellDef>COSMIC_overlapping_mutations</th>
+            <td mat-cell *matCellDef="let element"> {{element.COSMIC_overlapping_mutations}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="COSMIC_fusion_genes">
+            <th mat-header-cell *matHeaderCellDef>COSMIC_fusion_genes</th>
+            <td mat-cell *matCellDef="let element"> {{element.COSMIC_fusion_genes}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="COSMIC_tissue_types_affected">
+            <th mat-header-cell *matHeaderCellDef>COSMIC_tissue_types_affected</th>
+            <td mat-cell *matCellDef="let element"> {{element.COSMIC_tissue_types_affected}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="COSMIC_total_alterations_in_gene">
+            <th mat-header-cell *matHeaderCellDef>COSMIC_total_alterations_in_gene</th>
+            <td mat-cell *matCellDef="let element"> {{element.COSMIC_total_alterations_in_gene}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Tumorscape_Amplification_Peaks">
+            <th mat-header-cell *matHeaderCellDef>Tumorscape_Amplification_Peaks</th>
+            <td mat-cell *matCellDef="let element"> {{element.Tumorscape_Amplification_Peaks}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Tumorscape_Deletion_Peaks">
+            <th mat-header-cell *matHeaderCellDef>Tumorscape_Deletion_Peaks</th>
+            <td mat-cell *matCellDef="let element"> {{element.Tumorscape_Deletion_Peaks}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="TCGAscape_Amplification_Peaks">
+            <th mat-header-cell *matHeaderCellDef>TCGAscape_Amplification_Peaks</th>
+            <td mat-cell *matCellDef="let element"> {{element.TCGAscape_Amplification_Peaks}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="TCGAscape_Deletion_Peaks">
+            <th mat-header-cell *matHeaderCellDef>TCGAscape_Deletion_Peaks</th>
+            <td mat-cell *matCellDef="let element"> {{element.TCGAscape_Deletion_Peaks}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="DrugBank">
+            <th mat-header-cell *matHeaderCellDef>DrugBank</th>
+            <td mat-cell *matCellDef="let element"> {{element.DrugBank}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ref_context">
+            <th mat-header-cell *matHeaderCellDef>ref_context</th>
+            <td mat-cell *matCellDef="let element"> {{element.ref_context}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="gc_content">
+            <th mat-header-cell *matHeaderCellDef>gc_content</th>
+            <td mat-cell *matCellDef="let element"> {{element.gc_content}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="CCLE_ONCOMAP_overlapping_mutations">
+            <th mat-header-cell *matHeaderCellDef>CCLE_ONCOMAP_overlapping_mutations</th>
+            <td mat-cell *matCellDef="let element"> {{element.CCLE_ONCOMAP_overlapping_mutations}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="CCLE_ONCOMAP_total_mutations_in_gene">
+            <th mat-header-cell *matHeaderCellDef>CCLE_ONCOMAP_total_mutations_in_gene</th>
+            <td mat-cell *matCellDef="let element"> {{element.CCLE_ONCOMAP_total_mutations_in_gene}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="CGC_Mutation_Type">
+            <th mat-header-cell *matHeaderCellDef>CGC_Mutation_Type</th>
+            <td mat-cell *matCellDef="let element"> {{element.CGC_Mutation_Type}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="CGC_Translocation_Partner">
+            <th mat-header-cell *matHeaderCellDef>CGC_Translocation_Partner</th>
+            <td mat-cell *matCellDef="let element"> {{element.CGC_Translocation_Partner}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="CGC_Tumor_Types_Somatic">
+            <th mat-header-cell *matHeaderCellDef>CGC_Tumor_Types_Somatic</th>
+            <td mat-cell *matCellDef="let element"> {{element.CGC_Tumor_Types_Somatic}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="CGC_Tumor_Types_Germline">
+            <th mat-header-cell *matHeaderCellDef>CGC_Tumor_Types_Germline</th>
+            <td mat-cell *matCellDef="let element"> {{element.CGC_Tumor_Types_Germline}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="CGC_Other_Diseases">
+            <th mat-header-cell *matHeaderCellDef>CGC_Other_Diseases</th>
+            <td mat-cell *matCellDef="let element"> {{element.CGC_Other_Diseases}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="DNARepairGenes_Activity_linked_to_OMIM">
+            <th mat-header-cell *matHeaderCellDef>DNARepairGenes_Activity_linked_to_OMIM</th>
+            <td mat-cell *matCellDef="let element"> {{element.DNARepairGenes_Activity_linked_to_OMIM}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="FamilialCancerDatabase_Syndromes">
+            <th mat-header-cell *matHeaderCellDef>FamilialCancerDatabase_Syndromes</th>
+            <td mat-cell *matCellDef="let element"> {{element.FamilialCancerDatabase_Syndromes}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="MUTSIG_Published_Results">
+            <th mat-header-cell *matHeaderCellDef>MUTSIG_Published_Results</th>
+            <td mat-cell *matCellDef="let element"> {{element.MUTSIG_Published_Results}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="OREGANNO_ID">
+            <th mat-header-cell *matHeaderCellDef>OREGANNO_ID</th>
+            <td mat-cell *matCellDef="let element"> {{element.OREGANNO_ID}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="OREGANNO_Values">
+            <th mat-header-cell *matHeaderCellDef>OREGANNO_Values</th>
+            <td mat-cell *matCellDef="let element"> {{element.OREGANNO_Values}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="tumor_f">
+            <th mat-header-cell *matHeaderCellDef>tumor_f</th>
+            <td mat-cell *matCellDef="let element"> {{element.tumor_f}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="t_alt_count">
+            <th mat-header-cell *matHeaderCellDef>t_alt_count</th>
+            <td mat-cell *matCellDef="let element"> {{element.t_alt_count}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="t_ref_count">
+            <th mat-header-cell *matHeaderCellDef>t_ref_count</th>
+            <td mat-cell *matCellDef="let element"> {{element.t_ref_count}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="n_alt_count">
+            <th mat-header-cell *matHeaderCellDef>n_alt_count</th>
+            <td mat-cell *matCellDef="let element"> {{element.n_alt_count}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="n_ref_count">
+            <th mat-header-cell *matHeaderCellDef>n_ref_count</th>
+            <td mat-cell *matCellDef="let element"> {{element.n_ref_count}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Gencode_43_secondaryVariantClassification">
+            <th mat-header-cell *matHeaderCellDef>Gencode_43_secondaryVariantClassification</th>
+            <td mat-cell *matCellDef="let element"> {{element.Gencode_43_secondaryVariantClassification}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Achilles_Top_Genes">
+            <th mat-header-cell *matHeaderCellDef>Achilles_Top_Genes</th>
+            <td mat-cell *matCellDef="let element"> {{element.Achilles_Top_Genes}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_AF_ESP">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_AF_ESP</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_AF_ESP}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_AF_EXAC">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_AF_EXAC</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_AF_EXAC}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_AF_TGP">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_AF_TGP</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_AF_TGP}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_ALLELEID">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_ALLELEID</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_ALLELEID}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_CLNDISDB">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_CLNDISDB</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_CLNDISDB}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_CLNDISDBINCL">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_CLNDISDBINCL</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_CLNDISDBINCL}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_CLNDN">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_CLNDN</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_CLNDN}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_CLNDNINCL">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_CLNDNINCL</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_CLNDNINCL}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_CLNHGVS">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_CLNHGVS</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_CLNHGVS}} </td>
+          </ng-container>
+          
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_CLNREVSTAT">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_CLNREVSTAT</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_CLNREVSTAT}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_CLNSIG">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_CLNSIG</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_CLNSIG}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_CLNSIGCONF">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_CLNSIGCONF</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_CLNSIGCONF}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_CLNSIGINCL">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_CLNSIGINCL</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_CLNSIGINCL}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_CLNVC">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_CLNVC</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_CLNVC}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_CLNVCSO">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_CLNVCSO</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_CLNVCSO}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_CLNVI">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_CLNVI</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_CLNVI}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_DBVARID">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_DBVARID</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_DBVARID}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_GENEINFO">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_GENEINFO</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_GENEINFO}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_MC">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_MC</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_MC}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_ORIGIN">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_ORIGIN</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_ORIGIN}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_RS">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_RS</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_RS}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_ID">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_ID</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_ID}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ClinVar_VCF_FILTER">
+            <th mat-header-cell *matHeaderCellDef>ClinVar_VCF_FILTER</th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinVar_VCF_FILTER}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="CosmicFusion_fusion_id">
+            <th mat-header-cell *matHeaderCellDef>CosmicFusion_fusion_id</th>
+            <td mat-cell *matCellDef="let element"> {{element.CosmicFusion_fusion_id}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Familial_Cancer_Genes_Synonym">
+            <th mat-header-cell *matHeaderCellDef>Familial_Cancer_Genes_Synonym</th>
+            <td mat-cell *matCellDef="let element"> {{element.Familial_Cancer_Genes_Synonym}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Familial_Cancer_Genes_Reference">
+            <th mat-header-cell *matHeaderCellDef>Familial_Cancer_Genes_Reference</th>
+            <td mat-cell *matCellDef="let element"> {{element.Familial_Cancer_Genes_Reference}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Gencode_XHGNC_hgnc_id">
+            <th mat-header-cell *matHeaderCellDef>Gencode_XHGNC_hgnc_id</th>
+            <td mat-cell *matCellDef="let element"> {{element.Gencode_XHGNC_hgnc_id}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_HGNC_ID">
+            <th mat-header-cell *matHeaderCellDef>HGNC_HGNC_ID</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_HGNC_ID}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Approved_name">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Approved_name</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Approved_name}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Status">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Status</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Status}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Locus_type">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Locus_type</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Locus_type}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Locus_group">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Locus_group</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Locus_group}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Previous_symbols">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Previous_symbols</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Previous_symbols}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Previous_name">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Previous_name</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Previous_name}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Alias_symbols">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Alias_symbols</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Alias_symbols}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Alias_names">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Alias_names</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Alias_names}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Chromosome">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Chromosome</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Chromosome}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Date_modified">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Date_modified</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Date_modified}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Date_symbol_changed">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Date_symbol_changed</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Date_symbol_changed}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Date_name_changed">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Date_name_changed</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Date_name_changed}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Accession_numbers">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Accession_numbers</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Accession_numbers}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Enzyme_IDs">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Enzyme_IDs</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Enzyme_IDs}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_NCBI_Gene_ID">
+            <th mat-header-cell *matHeaderCellDef>HGNC_NCBI_Gene_ID</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_NCBI_Gene_ID}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Ensembl_gene_ID">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Ensembl_gene_ID</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Ensembl_gene_ID}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Pubmed_IDs">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Pubmed_IDs</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Pubmed_IDs}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_RefSeq_IDs">
+            <th mat-header-cell *matHeaderCellDef>HGNC_RefSeq_IDs</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_RefSeq_IDs}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Gene_group_ID">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Gene_group_ID</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Gene_group_ID}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Gene_group_name">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Gene_group_name</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Gene_group_name}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_CCDS_IDs">
+            <th mat-header-cell *matHeaderCellDef>HGNC_CCDS_IDs</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_CCDS_IDs}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Vega_IDs">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Vega_IDs</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Vega_IDs}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_NCBI_Gene_ID_supplied_by_NCBI">
+            <th mat-header-cell *matHeaderCellDef>HGNC_NCBI_Gene_ID_supplied_by_NCBI</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_NCBI_Gene_ID_supplied_by_NCBI}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_OMIM_ID_supplied_by_OMIM">
+            <th mat-header-cell *matHeaderCellDef>HGNC_OMIM_ID_supplied_by_OMIM</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_OMIM_ID_supplied_by_OMIM}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_RefSeq_supplied_by_NCBI">
+            <th mat-header-cell *matHeaderCellDef>HGNC_RefSeq_supplied_by_NCBI</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_RefSeq_supplied_by_NCBI}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_UniProt_ID_supplied_by_UniProt">
+            <th mat-header-cell *matHeaderCellDef>HGNC_UniProt_ID_supplied_by_UniProt</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_UniProt_ID_supplied_by_UniProt}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_Ensembl_ID_supplied_by_Ensembl">
+            <th mat-header-cell *matHeaderCellDef>HGNC_Ensembl_ID_supplied_by_Ensembl</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_Ensembl_ID_supplied_by_Ensembl}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="HGNC_UCSC_ID_supplied_by_UCSC">
+            <th mat-header-cell *matHeaderCellDef>HGNC_UCSC_ID_supplied_by_UCSC</th>
+            <td mat-cell *matCellDef="let element"> {{element.HGNC_UCSC_ID_supplied_by_UCSC}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Oreganno_Build">
+            <th mat-header-cell *matHeaderCellDef>Oreganno_Build</th>
+            <td mat-cell *matCellDef="let element"> {{element.Oreganno_Build}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Simple_Uniprot_alt_uniprot_accessions">
+            <th mat-header-cell *matHeaderCellDef>Simple_Uniprot_alt_uniprot_accessions</th>
+            <td mat-cell *matCellDef="let element"> {{element.Simple_Uniprot_alt_uniprot_accessions}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_ASP">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_ASP</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_ASP}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_ASS">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_ASS</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_ASS}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_CAF">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_CAF</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_CAF}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_CDA">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_CDA</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_CDA}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_CFL">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_CFL</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_CFL}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_COMMON">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_COMMON</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_COMMON}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_DSS">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_DSS</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_DSS}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_G5">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_G5</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_G5}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_G5A">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_G5A</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_G5A}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_GENEINFO">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_GENEINFO</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_GENEINFO}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_GNO">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_GNO</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_GNO}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_HD">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_HD</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_HD}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_INT">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_INT</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_INT}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_KGPhase1">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_KGPhase1</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_KGPhase1}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_KGPhase3">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_KGPhase3</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_KGPhase3}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_LSD">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_LSD</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_LSD}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_MTP">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_MTP</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_MTP}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_MUT">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_MUT</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_MUT}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_NOC">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_NOC</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_NOC}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_NOV">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_NOV</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_NOV}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_NSF">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_NSF</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_NSF}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_NSM">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_NSM</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_NSM}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_NSN">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_NSN</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_NSN}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_OM">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_OM</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_OM}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_OTH">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_OTH</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_OTH}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_PM">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_PM</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_PM}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_PMC">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_PMC</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_PMC}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_R3">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_R3</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_R3}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_R5">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_R5</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_R5}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_REF">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_REF</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_REF}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_RV">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_RV</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_RV}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_S3D">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_S3D</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_S3D}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_SAO">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_SAO</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_SAO}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_SLO">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_SLO</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_SLO}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_SSR">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_SSR</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_SSR}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_SYN">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_SYN</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_SYN}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_TOPMED">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_TOPMED</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_TOPMED}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_TPA">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_TPA</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_TPA}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_U3">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_U3</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_U3}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_U5">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_U5</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_U5}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_VC">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_VC</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_VC}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_VP">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_VP</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_VP}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_WGT">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_WGT</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_WGT}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_WTD">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_WTD</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_WTD}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_dbSNPBuildID">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_dbSNPBuildID</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_dbSNPBuildID}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_ID">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_ID</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_ID}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_FILTER">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_FILTER</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_FILTER}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_RSPOS">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_RSPOS</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_RSPOS}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dbSNP_VLD">
+            <th mat-header-cell *matHeaderCellDef>dbSNP_VLD</th>
+            <td mat-cell *matCellDef="let element"> {{element.dbSNP_VLD}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="AS_FilterStatus">
+            <th mat-header-cell *matHeaderCellDef>AS_FilterStatus</th>
+            <td mat-cell *matCellDef="let element"> {{element.AS_FilterStatus}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="AS_SB_TABLE">
+            <th mat-header-cell *matHeaderCellDef>AS_SB_TABLE</th>
+            <td mat-cell *matCellDef="let element"> {{element.AS_SB_TABLE}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="AS_UNIQ_ALT_READ_COUNT">
+            <th mat-header-cell *matHeaderCellDef>AS_UNIQ_ALT_READ_COUNT</th>
+            <td mat-cell *matCellDef="let element"> {{element.AS_UNIQ_ALT_READ_COUNT}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="CONTQ">
+            <th mat-header-cell *matHeaderCellDef>CONTQ</th>
+            <td mat-cell *matCellDef="let element"> {{element.CONTQ}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="DP">
+            <th mat-header-cell *matHeaderCellDef>DP</th>
+            <td mat-cell *matCellDef="let element"> {{element.DP}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ECNT">
+            <th mat-header-cell *matHeaderCellDef>ECNT</th>
+            <td mat-cell *matCellDef="let element"> {{element.ECNT}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="GERMQ">
+            <th mat-header-cell *matHeaderCellDef>GERMQ</th>
+            <td mat-cell *matCellDef="let element"> {{element.GERMQ}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="MBQ">
+            <th mat-header-cell *matHeaderCellDef>MBQ</th>
+            <td mat-cell *matCellDef="let element"> {{element.MBQ}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="MFRL">
+            <th mat-header-cell *matHeaderCellDef>MFRL</th>
+            <td mat-cell *matCellDef="let element"> {{element.MFRL}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="MMQ">
+            <th mat-header-cell *matHeaderCellDef>MMQ</th>
+            <td mat-cell *matCellDef="let element"> {{element.MMQ}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="MPOS">
+            <th mat-header-cell *matHeaderCellDef>MPOS</th>
+            <td mat-cell *matCellDef="let element"> {{element.MPOS}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="NALOD">
+            <th mat-header-cell *matHeaderCellDef>NALOD</th>
+            <td mat-cell *matCellDef="let element"> {{element.NALOD}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="NCount">
+            <th mat-header-cell *matHeaderCellDef>NCount</th>
+            <td mat-cell *matCellDef="let element"> {{element.NCount}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="NLOD">
+            <th mat-header-cell *matHeaderCellDef>NLOD</th>
+            <td mat-cell *matCellDef="let element"> {{element.NLOD}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="OCM">
+            <th mat-header-cell *matHeaderCellDef>OCM</th>
+            <td mat-cell *matCellDef="let element"> {{element.OCM}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="PON">
+            <th mat-header-cell *matHeaderCellDef>PON</th>
+            <td mat-cell *matCellDef="let element"> {{element.PON}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="POPAF">
+            <th mat-header-cell *matHeaderCellDef>POPAF</th>
+            <td mat-cell *matCellDef="let element"> {{element.POPAF}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="ROQ">
+            <th mat-header-cell *matHeaderCellDef>ROQ</th>
+            <td mat-cell *matCellDef="let element"> {{element.ROQ}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="RPA">
+            <th mat-header-cell *matHeaderCellDef>RPA</th>
+            <td mat-cell *matCellDef="let element"> {{element.RPA}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="RU">
+            <th mat-header-cell *matHeaderCellDef>RU</th>
+            <td mat-cell *matCellDef="let element"> {{element.RU}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="SEQQ">
+            <th mat-header-cell *matHeaderCellDef>SEQQ</th>
+            <td mat-cell *matCellDef="let element"> {{element.SEQQ}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="STR">
+            <th mat-header-cell *matHeaderCellDef>STR</th>
+            <td mat-cell *matCellDef="let element"> {{element.STR}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="STRANDQ">
+            <th mat-header-cell *matHeaderCellDef>STRANDQ</th>
+            <td mat-cell *matCellDef="let element"> {{element.STRANDQ}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="STRQ">
+            <th mat-header-cell *matHeaderCellDef>STRQ</th>
+            <td mat-cell *matCellDef="let element"> {{element.STRQ}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="TLOD">
+            <th mat-header-cell *matHeaderCellDef>TLOD</th>
+            <td mat-cell *matCellDef="let element"> {{element.TLOD}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+      <pagination-controls (pageChange)="p = $event" style="text-align: right;"></pagination-controls>
+      <div class="dashboard-container" style="text-align: left;">
+        
+        <button mat-raised-button (click)="onLogout()">Logout</button>
+      </div>
+    </div>
+  </div>
